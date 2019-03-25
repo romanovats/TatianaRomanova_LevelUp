@@ -1,5 +1,6 @@
 package ru.levelup.tatiana.romanova.qa.homework_1.task_1;
 
+// TODO Java Code Convention (ctrl + alt + L)
 public class Power {
 
     public long calcPower(long num, int power) {
