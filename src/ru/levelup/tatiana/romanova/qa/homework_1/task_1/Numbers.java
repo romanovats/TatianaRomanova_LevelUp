@@ -1,5 +1,8 @@
 package ru.levelup.tatiana.romanova.qa.homework_1.task_1;
 
+// TODO Please follow Java Code Convention for methods and variables naming
+// TODO присутствуют лишние пробелы
+// TODO Java Code Convention (ctrl + alt + L)
 public class Numbers {
 
     private int intNum_one;
