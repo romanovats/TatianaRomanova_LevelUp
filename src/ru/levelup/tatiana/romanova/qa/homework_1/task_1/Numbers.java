@@ -2,80 +2,80 @@ package ru.levelup.tatiana.romanova.qa.homework_1.task_1;
 
 public class Numbers {
 
-    private int intNum_one;
-    private int intNum_two;
-    private double doubleNum_one;
-    private double doubleNum_two;
-    private long longNum_one;
-    private long longNum_two;
+    private int intNumOne;
+    private int intNumTwo;
+    private double doubleNumOne;
+    private double doubleNumTwo;
+    private long longNumOne;
+    private long longNumTwo;
     private int power;
 
-    public void setNum_one(int intNum_one){
+    public void setNumOne(int intNumOne) {
 
-        this.intNum_one = intNum_one;
+        this.intNumOne = intNumOne;
     }
 
-    public void setNum_two(int intNum_two){
+    public void setNumTwo(int intNumTwo) {
 
-        this.intNum_two = intNum_two;
+        this.intNumTwo = intNumTwo;
     }
 
-    public void setNum_one(double double_num_one){
+    public void setNumOne(double doubleNumOne) {
 
-        this.doubleNum_one = double_num_one;
+        this.doubleNumOne = doubleNumOne;
     }
 
-    public void setNum_two(double double_num_two){
+    public void setNumTwo(double doubleNumTwo) {
 
-        this.doubleNum_two = double_num_two;
+        this.doubleNumTwo = doubleNumTwo;
     }
 
-    public void setNum_one(long long_num_one){
+    public void setNumOne(long longNumOne) {
 
-        this.longNum_one = long_num_one;
+        this.longNumOne = longNumOne;
     }
 
-    public void setNum_two(long long_num_two){
+    public void setNumTwo(long longNumTwo) {
 
-        this.longNum_two = long_num_two;
+        this.longNumTwo = longNumTwo;
     }
 
-    public void setPower(int power){
+    public void setPower(int power) {
 
         this.power = power;
     }
 
-    public int getInt_num_one(){
+    public int getIntNumOne() {
 
-        return intNum_one;
+        return intNumOne;
     }
 
-    public int getInt_num_two(){
+    public int getIntNumTwo() {
 
-        return intNum_two;
+        return intNumTwo;
     }
 
-    public double getDouble_num_one(){
+    public double getDoubleNumOne() {
 
-        return doubleNum_one;
+        return doubleNumOne;
     }
 
-    public double getDouble_num_two(){
+    public double getDoubleNumTwo() {
 
-        return doubleNum_two;
+        return doubleNumTwo;
     }
 
-    public long getLong_num_one(){
+    public long getLongNumOne() {
 
-        return longNum_one;
+        return longNumOne;
     }
 
-    public long getLong_num_two(){
+    public long getLongNumTwo() {
 
-        return longNum_two;
+        return longNumTwo;
     }
 
-    public int getPower(){
+    public int getPower() {
 
         return power;
     }
