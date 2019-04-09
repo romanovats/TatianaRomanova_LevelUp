@@ -79,10 +79,10 @@ public class Calculator {
                 } else {
                     if (num.getDoubleNumOne() != 0.0 && num.getDoubleNumTwo() != 0.0) {
                         System.out.println(multiplication.calcMultiplication(num.getDoubleNumOne(),
-                                                                             num.getDoubleNumTwo()));
+                                num.getDoubleNumTwo()));
                     } else {
                         System.out.println(multiplication.calcMultiplication(num.getLongNumOne(),
-                                                                             num.getLongNumTwo()));
+                                num.getLongNumTwo()));
                     }
                 }
                 break;
