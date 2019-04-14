@@ -6,6 +6,7 @@ public class MainClass {
 
     public static void main(String args[]) {
 
+        // TODO Хорошим тоном считается закрытие потоков ввода/вывода
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         double[] x = new double[2];
