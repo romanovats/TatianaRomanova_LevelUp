@@ -9,12 +9,18 @@
 
     <properties>
         <junit.version>4.12</junit.version>
+        <selenium.webdriver.version>3.14.0</selenium.webdriver.version>
         <!-- Maven specific props -->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.webdriver.version}</version>
+        </dependency>
         <dependency>
             <groupId>ru.levelup</groupId>
             <artifactId>calculator</artifactId>
