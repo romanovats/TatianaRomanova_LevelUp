@@ -1,5 +1,6 @@
 package ru.levelup.tatiana.romanova.qa.homework_2;
 
+// TODO Лучше было бы разделить эти два класса
 public class VegetablesFruits extends Products {
 
     private String ripeningSeason; //сезон созревания
