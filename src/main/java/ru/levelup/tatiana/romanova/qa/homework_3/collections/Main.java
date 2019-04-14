@@ -55,6 +55,8 @@ public class Main {
             System.out.println("Enter price: ");
             System.out.println(getSkuNameSetPrice(skuList, Integer.parseInt(reader.readLine())));
 
+            reader.close();
+
         } catch (IOException e) {
             System.out.println("Error!" + e.getMessage());
             e.printStackTrace();
