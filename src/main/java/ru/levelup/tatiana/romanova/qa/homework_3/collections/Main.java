@@ -13,7 +13,7 @@ public class Main {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        List<Sku> skuList = new ArrayList<>();
+        List<Sku> skuList = new ArrayList<Sku>();
         String[] skuNameMas = new String[50];
         Random rnd = new Random();
 
@@ -61,7 +61,7 @@ public class Main {
 
     // лист в заданном диапазоне цен
     public static List<Sku> getSkuList_setRange(List<Sku> inputData, int minPrice, int maxPrice) {
-        List<Sku> result = new ArrayList<>();
+        List<Sku> result = new ArrayList<Sku>();
         for (Sku item : inputData) {
             if (item.getPrice() < maxPrice && item.getPrice() > minPrice) {
                 result.add(item);
@@ -72,7 +72,7 @@ public class Main {
 
     // лист sku, возвращаюший товары > средней цены + 20
     public static List<Sku> getSkuList_avgPricePlus20(List<Sku> inputData, double avgPrice) {
-        List<Sku> result = new ArrayList<>();
+        List<Sku> result = new ArrayList<Sku>();
         for (Sku item : inputData) {
             if (item.getPrice() > (avgPrice + 20)) {
                 result.add(item);
@@ -83,7 +83,7 @@ public class Main {
 
     // метод, возвращающий имя товара заданной цены, если товаров несколько, возвращаем 2 товар
     public static String getSkuName_setPrice(List<Sku> inputData, int price) {
-        List<Sku> result = new ArrayList<>();
+        List<Sku> result = new ArrayList<Sku>();
         for (Sku item : inputData) {
             if (item.getPrice() == price) {
                 result.add(item);
