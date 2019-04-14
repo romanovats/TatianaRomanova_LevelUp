@@ -6,7 +6,6 @@
     <groupId>ru.levelup.tatiana.romanova.qa.homework_1.task_1</groupId>
     <artifactId>TatianaRomanova_LevelUp</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <!-- TODO А где gitignore? -->
 
     <properties>
         <junit.version>4.12</junit.version>

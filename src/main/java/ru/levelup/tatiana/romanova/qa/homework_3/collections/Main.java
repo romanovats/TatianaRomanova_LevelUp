@@ -11,8 +11,10 @@ public class Main {
 
     public static void main(String args[]) {
 
+        // TODO Закрытие потока ввода/вывода
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
+        // TODO new ArrayList<Sku>(); - указание Sku не обязательно
         List<Sku> skuList = new ArrayList<Sku>();
         String[] skuNameMas = new String[50];
         Random rnd = new Random();
@@ -60,6 +62,7 @@ public class Main {
     }
 
     // лист в заданном диапазоне цен
+    // TODO Java code convention for the method naming
     public static List<Sku> getSkuList_setRange(List<Sku> inputData, int minPrice, int maxPrice) {
         List<Sku> result = new ArrayList<Sku>();
         for (Sku item : inputData) {
@@ -71,6 +74,7 @@ public class Main {
     }
 
     // лист sku, возвращаюший товары > средней цены + 20
+    // TODO Java code convention for the method naming
     public static List<Sku> getSkuList_avgPricePlus20(List<Sku> inputData, double avgPrice) {
         List<Sku> result = new ArrayList<Sku>();
         for (Sku item : inputData) {
@@ -82,6 +86,7 @@ public class Main {
     }
 
     // метод, возвращающий имя товара заданной цены, если товаров несколько, возвращаем 2 товар
+    // TODO Java code convention for the method naming
     public static String getSkuName_setPrice(List<Sku> inputData, int price) {
         List<Sku> result = new ArrayList<Sku>();
         for (Sku item : inputData) {
@@ -90,6 +95,7 @@ public class Main {
             }
         }
 
+        // TODO В можно заметить на тернарный оператор
         if (result.size() != 1) {
             return result.get(1).getName();
         } else {
