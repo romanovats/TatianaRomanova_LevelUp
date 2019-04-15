@@ -1,6 +1,5 @@
 package ru.levelup.tatiana.romanova.qa.homework_2;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Comparator;
