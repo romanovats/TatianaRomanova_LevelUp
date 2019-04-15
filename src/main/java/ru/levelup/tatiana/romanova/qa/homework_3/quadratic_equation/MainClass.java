@@ -23,6 +23,7 @@ public class MainClass {
 
             System.out.println("");
             solution(a, b, c);
+            reader.close();
         } catch (IOException e) {
             System.out.println("Error!" + e.getMessage());
             e.printStackTrace();
