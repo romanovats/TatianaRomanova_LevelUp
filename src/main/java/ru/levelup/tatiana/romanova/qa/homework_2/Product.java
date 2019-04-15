@@ -1,41 +1,17 @@
 package ru.levelup.tatiana.romanova.qa.homework_2;
 
 // TODO Как правило классы носят единственное число в названии
-public abstract class Products {
+public abstract class Product {
 
     // TODO Обязательно ли, чтобы поля были private?
-    private String name;
-    private double calories;
-    private int amount;
+    protected String name;
+    protected double calories;
+    protected int amount;
 
-    public void setName(String name) {
-
+    public Product(String name, double calories, int amount){
         this.name = name;
-    }
-
-    public void setCalories(double calories) {
-
         this.calories = calories;
-    }
-
-    public void setAmount(int amount) {
-
         this.amount = amount;
-    }
-
-    public String getName() {
-
-        return name;
-    }
-
-    public double getCalories() {
-
-        return calories;
-    }
-
-    public int getAmount() {
-
-        return amount;
     }
 
     @Override
@@ -45,4 +21,15 @@ public abstract class Products {
                 ", calories=" + calories + ", amount=" + amount;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public double getCalories() {
+        return calories;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
 }
