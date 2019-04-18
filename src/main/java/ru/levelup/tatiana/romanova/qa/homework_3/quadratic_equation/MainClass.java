@@ -6,7 +6,6 @@ public class MainClass {
 
     public static void main(String args[]) {
 
-        // TODO Хорошим тоном считается закрытие потоков ввода/вывода
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         double[] x = new double[2];
@@ -23,6 +22,8 @@ public class MainClass {
 
             System.out.println("");
             solution(a, b, c);
+            // TODO Как правильно закрывать потоки ввода и вывода?
+            // TODO Из каких конструкций состоит блок try
             reader.close();
         } catch (IOException e) {
             System.out.println("Error!" + e.getMessage());

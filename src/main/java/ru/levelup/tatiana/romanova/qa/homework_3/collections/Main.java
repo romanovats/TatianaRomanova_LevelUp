@@ -11,10 +11,8 @@ public class Main {
 
     public static void main(String args[]) {
 
-        // TODO Закрытие потока ввода/вывода
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        // TODO new ArrayList<Sku>(); - указание Sku не обязательно
         List<Sku> skuList = new ArrayList();
         String[] skuNameMas = new String[50];
         Random rnd = new Random();
@@ -55,6 +53,8 @@ public class Main {
             System.out.println("Enter price: ");
             System.out.println(getSkuNameSetPrice(skuList, Integer.parseInt(reader.readLine())));
 
+            // TODO Как правильно закрывать потоки ввода и вывода?
+            // TODO Из каких конструкций состоит блок try
             reader.close();
 
         } catch (IOException e) {
@@ -64,7 +64,6 @@ public class Main {
     }
 
     // лист в заданном диапазоне цен
-    // TODO Java code convention for the method naming
     public static List<Sku> getSkuListSetRange(List<Sku> inputData, int minPrice, int maxPrice) {
         List<Sku> result = new ArrayList<Sku>();
         for (Sku item : inputData) {
@@ -76,7 +75,6 @@ public class Main {
     }
 
     // лист sku, возвращаюший товары > средней цены + 20
-    // TODO Java code convention for the method naming
     public static List<Sku> getSkuListAvgPricePlus20(List<Sku> inputData, double avgPrice) {
         List<Sku> result = new ArrayList<Sku>();
         for (Sku item : inputData) {
@@ -88,7 +86,6 @@ public class Main {
     }
 
     // метод, возвращающий имя товара заданной цены, если товаров несколько, возвращаем 2 товар
-    // TODO Java code convention for the method naming
     public static String getSkuNameSetPrice(List<Sku> inputData, int price) {
         List<Sku> result = new ArrayList<Sku>();
         for (Sku item : inputData) {
@@ -97,7 +94,8 @@ public class Main {
             }
         }
 
-        // TODO В можно заметить на тернарный оператор
+        // TODO Можжно убрать присваивание пременной значения
+        // TODO IDEA отсаляет за собой подсказки, иногда на них нужно обращать внимание)
         String nameRez = result.size() != 1 ? result.get(1).getName() : result.get(0).getName();
         return nameRez;
     }
