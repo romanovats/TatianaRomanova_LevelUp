@@ -1,6 +1,5 @@
 .idea
 # TODO Папка target може быть добавлена в удалённый репозиторий
-.target
 *.iws
 *.iml
 *.ipr

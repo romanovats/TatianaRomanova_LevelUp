@@ -1,16 +1,22 @@
 package ru.levelup.tatiana.romanova.qa.homework_2;
 
-public class Meat extends Products {
+public class Meat extends Product {
 
-    private double age;
+    protected double age;
 
-    public void setAge(double age) {
-
+    public Meat(String name, double calories, int amount, double age) {
+        super(name, calories, amount);
         this.age = age;
     }
 
-    public double getAge() {
+    @Override
+    public String toString() {
+        return "\n Meats {" +
+                "name=" + name +
+                ", calories=" + calories + ", amount=" + amount + ", age="+age;
+    }
 
+    public double getAge() {
         return age;
     }
 }

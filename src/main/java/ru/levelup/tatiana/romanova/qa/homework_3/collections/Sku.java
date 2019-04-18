@@ -1,8 +1,5 @@
 package ru.levelup.tatiana.romanova.qa.homework_3.collections;
 
-// TODO не используемый импорт
-import java.io.*;
-
 public class Sku {
 
     private String name;
