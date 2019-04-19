@@ -1,9 +1,7 @@
 package ru.levelup.tatiana.romanova.qa.homework_2;
 
-// TODO Как правило классы носят единственное число в названии
 public abstract class Product {
 
-    // TODO Обязательно ли, чтобы поля были private?
     protected String name;
     protected double calories;
     protected int amount;
