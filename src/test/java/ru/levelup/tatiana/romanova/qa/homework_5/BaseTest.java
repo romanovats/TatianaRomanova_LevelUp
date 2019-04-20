@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterTest;
 
 import java.util.concurrent.TimeUnit;
 
@@ -35,7 +37,7 @@ public abstract class BaseTest {
         driver.findElement(By.id("password")).sendKeys(password);
         driver.findElement(By.cssSelector(".btn-success")).click();
         //4 Assert User name ("administator") in the right-top side of screen that user is loggined
-        assertThat(driver.findElement(By.className("user-info")).getText(), equalTo("administrator"));
+        assertThat(driver.findElement(By.className("user-info")).getText(), equalTo(username));
     }
 
     protected void logout() {
@@ -44,7 +46,7 @@ public abstract class BaseTest {
     }
 
     @AfterTest (alwaysRun = true)
-    private void closeBrowser() {
+    protected void closeBrowser() {
         // 14  Close browser
         driver.close();
     }

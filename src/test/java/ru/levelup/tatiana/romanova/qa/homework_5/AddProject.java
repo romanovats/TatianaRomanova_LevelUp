@@ -37,12 +37,10 @@ public class AddProject extends BaseTest {
         assertThat(driver.getTitle(), equalTo("Manage Projects - MantisBT"));
 
         //8 Check "Create New Project" button
+        assertThat(driver.findElement(By.xpath("//form[contains(@action,'manage_proj_create')]//button[@type='submit']")).getText(),
+                equalTo("Create New Project"));
         //9 Click "Create New Project" button
-        try {
-            driver.findElement(By.xpath("//form[contains(@action,'manage_proj_create')]//button[@type='submit']")).click();
-        } catch (NoSuchElementException e){
-            System.out.println("Element not found");
-        }
+        driver.findElement(By.xpath("//form[contains(@action,'manage_proj_create')]//button[@type='submit']")).click();
 
         //10 Check fields on the "Add Project" view
         List<String> expectesAddProjectView = new ArrayList<>(Arrays.asList("* Project Name", "Status",
@@ -55,7 +53,7 @@ public class AddProject extends BaseTest {
         assertThat(actualAddProjectView, containsInAnyOrder(expectesAddProjectView.toArray(new String[expectesAddProjectView.size()])));
 
         //11 Fill project information
-        driver.findElement(By.id("project-name")).sendKeys("RTS-project");
+        driver.findElement(By.id("project-name")).sendKeys("RTS-project1");
         driver.findElement(By.id("project-status")).sendKeys("development");
         if(driver.findElement(By.className("lbl")).isSelected()){
             driver.findElement(By.className("lbl")).click();
@@ -69,8 +67,6 @@ public class AddProject extends BaseTest {
         //13 logout
         logout();
     }
-
-
 }
 
 
