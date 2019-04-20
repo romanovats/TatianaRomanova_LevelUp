@@ -58,11 +58,11 @@ public class AddUser extends MyBaseTest {
         }
         assertThat(actualCreateUserView, containsInAnyOrder(expectesCreateUserView.toArray(new String[expectesCreateUserView.size()])));
 
-        createNewAccountPage.setUserNameTextField("RTS-User11");
+        createNewAccountPage.setUserNameTextField(properties.getProperty("testUser.username"));
         createNewAccountPage.setUserRealNameTextField("RTS-real-name");
         createNewAccountPage.setEmailTextField("email@email.com");
-        createNewAccountPage.setPasswordTextField("123");
-        createNewAccountPage.setVerifyPasswordTextField("123");
+        createNewAccountPage.setPasswordTextField(properties.getProperty("testUser.password"));
+        createNewAccountPage.setVerifyPasswordTextField(properties.getProperty("testUser.password"));
         createNewAccountPage.setAccessLevelComboBox("reporter");
         createNewAccountPage.setEnabledCheckBox();
         createNewAccountPage.setProtectedCheckBox();
@@ -71,9 +71,9 @@ public class AddUser extends MyBaseTest {
 
         createNewAccountPage.logout();
 
-        loginPage.login("RTS-User11", "123");
+        loginPage.login(properties.getProperty("testUser.username"), properties.getProperty("testUser.password"));
 
-        assertThat(driver.findElement(By.className("user-info")).getText(), equalTo("RTS-User11"));
+        assertThat(driver.findElement(By.className("user-info")).getText(), equalTo(properties.getProperty("testUser.username")));
 
         homePage.logout();
     }

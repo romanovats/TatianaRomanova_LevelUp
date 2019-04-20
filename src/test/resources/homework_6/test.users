@@ -1,0 +1,5 @@
+admin.username=administrator
+admin.password=root
+
+testUser.username=RTS2
+testUser.password=123
