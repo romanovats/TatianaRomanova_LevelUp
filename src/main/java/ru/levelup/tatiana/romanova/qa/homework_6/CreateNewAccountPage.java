@@ -32,52 +32,25 @@ public class CreateNewAccountPage extends BasePage {
     @FindBy(xpath = "(//span[@class='lbl'])[2]")
     private WebElement protectedCheckBox;
 
-    public CreateNewAccountPage(WebDriver driver) {
+    public CreateNewAccountPage(WebDriver driver) { super(driver); }
 
-        super(driver);
-    }
+    public List<WebElement> getElementsCreateUserView() { return elementsCreateUserView; }
 
-    public List<WebElement> getElementsCreateUserView() {
-        return elementsCreateUserView;
-    }
+    public void clickCreateUserButton() { createUserButton.click(); }
 
-    public void setUserNameTextField(String userNameTextField) {
+    public void setAccountInfo(String userNameTextField, String userRealNameTextField, String emailTextField,
+                               String passwordTextField, String verifyPasswordTextField, String accessLevelComboBox ){
         this.userNameTextField.sendKeys(userNameTextField);
-    }
-
-    public void setUserRealNameTextField(String userRealNameTextField) {
         this.userRealNameTextField.sendKeys(userRealNameTextField);
-    }
-
-    public void setEmailTextField(String emailTextField) {
         this.emailTextField.sendKeys(emailTextField);
-    }
-
-    public void setPasswordTextField(String passwordTextField) {
         this.passwordTextField.sendKeys(passwordTextField);
-    }
-
-    public void setVerifyPasswordTextField(String verifyPasswordTextField) {
         this.verifyPasswordTextField.sendKeys(verifyPasswordTextField);
-    }
-
-    public void setAccessLevelComboBox(String accessLevelComboBox) {
         this.accessLevelComboBox.sendKeys(accessLevelComboBox);
-    }
-
-    public void setEnabledCheckBox() {
         if (enabledCheckBox.isSelected()) {
             this.enabledCheckBox.click();
         }
-    }
-
-    public void setProtectedCheckBox() {
         if (protectedCheckBox.isSelected()) {
             this.protectedCheckBox.click();
         }
-    }
-
-    public void clickCreateUserButton() {
-        createUserButton.click();
     }
 }

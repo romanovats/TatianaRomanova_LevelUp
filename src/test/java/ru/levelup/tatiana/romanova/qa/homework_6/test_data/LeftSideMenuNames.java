@@ -16,7 +16,7 @@ public enum LeftSideMenuNames {
         this.itemName = itemName;
     }
 
-    public String getItemName(){
+    public String getItemName() {
         return itemName;
     }
 }
