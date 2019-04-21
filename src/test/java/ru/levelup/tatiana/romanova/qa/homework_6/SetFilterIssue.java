@@ -2,6 +2,7 @@ package ru.levelup.tatiana.romanova.qa.homework_6;
 
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import ru.levelup.tatiana.romanova.qa.homework_6.test_data.IssuesNames;
 import ru.levelup.tatiana.romanova.qa.homework_6.test_data.LeftSideMenuNames;
 import ru.levelup.tatiana.romanova.qa.homework_6.test_data.PageTittles;
 
@@ -11,8 +12,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 
 public class SetFilterIssue extends MyBaseTest {
 
@@ -20,7 +20,7 @@ public class SetFilterIssue extends MyBaseTest {
     private ViewIssuesPage viewIssuesPage;
 
     @Test
-    private void AddIssueTest() {
+    private void SetFilterIssueTest() {
 
         homePage = new HomePage(driver);
         viewIssuesPage = new ViewIssuesPage(driver);
@@ -42,12 +42,22 @@ public class SetFilterIssue extends MyBaseTest {
 
         viewIssuesPage.clickFilter();
         viewIssuesPage.setFilters("high", "tweak", "assigned", "2019", "April",
-                                  "1", "2019", "April", "23");
+                                  "10", "2019", "April", "23");
 
         viewIssuesPage.clickApplyFilterButton();
-        if(viewIssuesPage.getBugListResult().size() > 1){
-            System.out.println("Filters setted");
+
+        List<String> expectedBugListResult = new ArrayList<>();
+        for(IssuesNames item : IssuesNames.values())
+        {
+            expectedBugListResult.add(item.getItemName());
         }
+
+        List<String> actualBugListResult = new ArrayList<>();
+        for(WebElement item : viewIssuesPage.getBugListResult()){
+            actualBugListResult.add(item.getText());
+        }
+        assertThat(expectedBugListResult, hasItems(actualBugListResult.toArray(new String[actualBugListResult.size()])));
+
         viewIssuesPage.logout();
     }
 }

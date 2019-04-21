@@ -11,9 +11,6 @@ public class ViewIssuesPage extends BasePage {
 
     private WebDriver driver;
 
-    @FindBy(xpath = "//table[@id='buglist']//tbody//tr")
-    private List<WebElement> bugListResult;
-
     @FindBy(id="show_priority_filter")
     private WebElement priorityFilter;
     @FindBy(id="show_severity_filter")
@@ -47,6 +44,9 @@ public class ViewIssuesPage extends BasePage {
     @FindBy(xpath = "//input[@value='Apply Filter']")
     private WebElement applyFilterButton;
 
+    @FindBy(xpath = "//td[@class='column-summary']")
+    private List<WebElement> bugListResult;
+
     public ViewIssuesPage(WebDriver driver){ super(driver); }
 
     public void clickFilter(){
@@ -73,10 +73,7 @@ public class ViewIssuesPage extends BasePage {
         endDayFilterValue.sendKeys(endDay);
     }
 
-    public void clickApplyFilterButton(){
-
-        applyFilterButton.click();
-    }
+    public void clickApplyFilterButton(){ applyFilterButton.click(); }
 
     public List<WebElement> getBugListResult() { return bugListResult; }
 }
