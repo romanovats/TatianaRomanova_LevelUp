@@ -30,4 +30,5 @@ public class ManagePage extends BasePage {
     public List<WebElement> getElementsManageTabs() {
         return elementsManageTabs;
     }
+
 }

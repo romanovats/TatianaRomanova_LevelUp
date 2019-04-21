@@ -19,6 +19,10 @@ public abstract class BasePage extends BaseWebComponent {
         super(driver);
     }
 
+    public WebElement getUserInfoLink() {
+        return userinfoLink;
+    }
+
     public String getPageTittle(){
         return driver.getTitle();
     }

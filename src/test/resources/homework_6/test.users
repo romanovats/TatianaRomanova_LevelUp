@@ -1,5 +1,8 @@
-admin.username=administrator
-admin.password=root
+admin.username=admin
+admin.password=admin
 
 testUser.username=RTS2
+testUser.realname=RTS3-real-name
+testUser.email=email@email.com
+testUser.access_level=reporter
 testUser.password=123

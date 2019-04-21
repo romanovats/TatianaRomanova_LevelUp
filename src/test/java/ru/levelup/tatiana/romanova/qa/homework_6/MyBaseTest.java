@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import ru.levelup.tatiana.romanova.qa.homework_6.base.BasePage;
+import ru.levelup.tatiana.romanova.qa.homework_6.test_data.PageTittles;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,8 +19,9 @@ import static org.hamcrest.Matchers.equalTo;
 public abstract class MyBaseTest {
 
     public WebDriver driver;
-    private LoginPage loginPage;
     public Properties properties;
+    private LoginPage loginPage;
+    private HomePage homePage;
 
     @BeforeClass (alwaysRun = true)
     protected void setUpTest() {
@@ -29,7 +30,9 @@ public abstract class MyBaseTest {
 
         driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
         properties = new Properties();
+
         try {
             properties.load(new FileInputStream(new File("src/test/resources/homework_6/test.users")));
         } catch (IOException e){
@@ -42,10 +45,10 @@ public abstract class MyBaseTest {
         driver.manage().window().maximize();
 
         driver.get("http://khda91.fvds.ru/mantisbt/");
-        assertThat(loginPage.getPageTittle(), equalTo("MantisBT"));
+        assertThat(loginPage.getPageTittle(), equalTo(PageTittles.LOGIN_PAGE.getItemName()));
 
         loginPage.login(properties.getProperty("admin.username"), properties.getProperty("admin.password"));
-        assertThat(driver.findElement(By.className("user-info")).getText(), equalTo(properties.getProperty("admin.username")));
+        assertThat(homePage.getUserInfoLink().getText(), equalTo(properties.getProperty("admin.username")));
     }
 
     @AfterTest (alwaysRun = true)
