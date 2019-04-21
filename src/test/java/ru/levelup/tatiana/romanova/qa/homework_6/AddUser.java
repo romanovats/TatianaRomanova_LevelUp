@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import ru.levelup.tatiana.romanova.qa.homework_6.test_data.CreateUserViewNames;
 import ru.levelup.tatiana.romanova.qa.homework_6.test_data.LeftSideMenuNames;
+import ru.levelup.tatiana.romanova.qa.homework_6.test_data.ManageTabNames;
 import ru.levelup.tatiana.romanova.qa.homework_6.test_data.PageTittles;
 
 import java.util.ArrayList;
@@ -40,10 +41,10 @@ public class AddUser extends MyBaseTest {
         homePage.clickMenuLeftSideMenu(LeftSideMenuNames.MANAGE.getItemName());
         assertThat(managePage.getPageTittle(), equalTo(PageTittles.MANAGE_PAGE.getItemName()));
 
-        managePage.clickUsersTab("Manage Users");
+        managePage.clickUsersTab(ManageTabNames.MANAGE_USERS.getItemName());
         assertThat(manageUsersPage.getPageTittle(), equalTo(PageTittles.MANAGE_PAGE.getItemName()));
 
-        assertThat(manageUsersPage.getCreateNewAccountButtonName(), equalTo("Create New Account"));
+        assertThat(manageUsersPage.getCreateNewAccountButtonName(), equalTo(manageUsersPage.CREATE_NEW_ACCOUNT_BUTTON_NAME));
         manageUsersPage.clickCreateNewAccountButton();
 
         List<String> actualCreateUserView = new ArrayList<>();
