@@ -42,6 +42,9 @@ public class SetFilterIssue extends MyBaseTest {
         homePage.clickMenuLeftSideMenu(LeftSideMenuNames.VIEW_ISSUES.getItemName());
         assertThat(viewIssuesPage.getPageTittle(), equalTo(PageTittles.VIEW_ISSUES_PAGE.getItemName()));
 
+        // Reset filters
+        viewIssuesPage.clickResetFilterButton();
+
         viewIssuesPage.clickFilter();
 
         //7 Set filter values

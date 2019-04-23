@@ -35,6 +35,7 @@ public abstract class MyBaseTest {
 
         try {
             properties.load(new FileInputStream(new File("src/test/resources/homework_6/test.users")));
+            properties.load(new FileInputStream(new File("src/test/resources/homework_6/issue.filters")));
         } catch (IOException e){
             e.printStackTrace();
         }

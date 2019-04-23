@@ -44,6 +44,9 @@ public class ViewIssuesPage extends BasePage {
     @FindBy(xpath = "//input[@value='Apply Filter']")
     private WebElement applyFilterButton;
 
+    @FindBy(partialLinkText = "Reset")
+    private WebElement resetFilterButton;
+
     @FindBy(xpath = "//td[@class='column-summary']")
     private List<WebElement> bugListResult;
 
@@ -54,7 +57,7 @@ public class ViewIssuesPage extends BasePage {
         severityFilter.click();
         statusFilter.click();
         dateSubmittedFilter.click();
-        if (dateSubmittedFilterCheckBox.isSelected() == true) {
+        if (dateSubmittedFilterCheckBox.isSelected() == false) {
             this.dateSubmittedFilterCheckBox.click();
         }
     }
@@ -74,6 +77,8 @@ public class ViewIssuesPage extends BasePage {
     }
 
     public void clickApplyFilterButton(){ applyFilterButton.click(); }
+
+    public void clickResetFilterButton(){ resetFilterButton.click(); }
 
     public List<WebElement> getBugListResult() { return bugListResult; }
 }
