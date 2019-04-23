@@ -44,10 +44,13 @@ public abstract class MyBaseTest {
         driver.manage().timeouts().setScriptTimeout(15000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
 
+        //1 Open test site by URL
         driver.get("http://khda91.fvds.ru/mantisbt/");
+        //2 Assert Browser tittle
         assertThat(loginPage.getPageTittle(), equalTo(PageTittles.LOGIN_PAGE.getItemName()));
-
+        //3 Perform login
         loginPage.login(properties.getProperty("admin.username"), properties.getProperty("admin.password"));
+        //4 Assert User name in the right-top side of screen that user is loggined
         assertThat(homePage.getUserInfoLink().getText(), equalTo(properties.getProperty("admin.username")));
     }
 

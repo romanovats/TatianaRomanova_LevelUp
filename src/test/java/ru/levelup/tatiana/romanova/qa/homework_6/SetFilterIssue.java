@@ -25,6 +25,7 @@ public class SetFilterIssue extends MyBaseTest {
         homePage = new HomePage(driver);
         viewIssuesPage = new ViewIssuesPage(driver);
 
+        //5 Assert left side menu
         List<String> expectedLeftSideMenu = new ArrayList<>();
         for(LeftSideMenuNames item : LeftSideMenuNames.values())
         {
@@ -37,15 +38,27 @@ public class SetFilterIssue extends MyBaseTest {
         }
         assertThat(actualLeftSideMenu, containsInAnyOrder(expectedLeftSideMenu.toArray(new String[expectedLeftSideMenu.size()])));
 
+        //6 Click "View issues" button at the left side menu
         homePage.clickMenuLeftSideMenu(LeftSideMenuNames.VIEW_ISSUES.getItemName());
         assertThat(viewIssuesPage.getPageTittle(), equalTo(PageTittles.VIEW_ISSUES_PAGE.getItemName()));
 
         viewIssuesPage.clickFilter();
-        viewIssuesPage.setFilters("high", "tweak", "assigned", "2019", "April",
-                                  "10", "2019", "April", "23");
 
+        //7 Set filter values
+        viewIssuesPage.setFilters(properties.getProperty("issueFilter.priority"),
+                                  properties.getProperty("issueFilter.severity"),
+                                  properties.getProperty("issueFilter.status"),
+                                  properties.getProperty("issueFilter.startYear"),
+                                  properties.getProperty("issueFilter.startMonth"),
+                                  properties.getProperty("issueFilter.startDay"),
+                                  properties.getProperty("issueFilter.endYear"),
+                                  properties.getProperty("issueFilter.endMonth"),
+                                  properties.getProperty("issueFilter.endDay"));
+
+        //8 Click Apply filter
         viewIssuesPage.clickApplyFilterButton();
 
+        //9 Check results
         List<String> expectedBugListResult = new ArrayList<>();
         for(IssuesNames item : IssuesNames.values())
         {
@@ -58,6 +71,7 @@ public class SetFilterIssue extends MyBaseTest {
         }
         assertThat(expectedBugListResult, hasItems(actualBugListResult.toArray(new String[actualBugListResult.size()])));
 
+        //10 logout
         viewIssuesPage.logout();
     }
 }

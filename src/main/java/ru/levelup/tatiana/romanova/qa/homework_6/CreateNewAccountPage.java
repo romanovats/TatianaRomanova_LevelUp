@@ -39,7 +39,7 @@ public class CreateNewAccountPage extends BasePage {
     public void clickCreateUserButton() { createUserButton.click(); }
 
     public void setAccountInfo(String userNameTextField, String userRealNameTextField, String emailTextField,
-                               String passwordTextField, String verifyPasswordTextField, String accessLevelComboBox ){
+                               String passwordTextField, String verifyPasswordTextField, String accessLevelComboBox){
         this.userNameTextField.sendKeys(userNameTextField);
         this.userRealNameTextField.sendKeys(userRealNameTextField);
         this.emailTextField.sendKeys(emailTextField);

@@ -34,6 +34,7 @@ public class AddUser extends MyBaseTest {
         manageUsersPage = new ManageUsersPage(driver);
         createNewAccountPage = new CreateNewAccountPage(driver);
 
+        //5 Assert left side menu
         List<String> expectedLeftSideMenu = new ArrayList<>();
         for(LeftSideMenuNames item : LeftSideMenuNames.values())
         {
@@ -46,15 +47,21 @@ public class AddUser extends MyBaseTest {
         }
         assertThat(actualLeftSideMenu, containsInAnyOrder(expectedLeftSideMenu.toArray(new String[expectedLeftSideMenu.size()])));
 
+        //6 Click "Manage" button at the left side menu
         homePage.clickMenuLeftSideMenu(LeftSideMenuNames.MANAGE.getItemName());
         assertThat(managePage.getPageTittle(), equalTo(PageTittles.MANAGE_PAGE.getItemName()));
 
+        //7 Click "Manage User" button at the top menuon the "Manage MantisBT" page
         managePage.clickUsersTab(ManageTabNames.MANAGE_USERS.getItemName());
         assertThat(manageUsersPage.getPageTittle(), equalTo(PageTittles.MANAGE_USERS_PAGE.getItemName()));
 
+        //8 Check "Create New Account" button
         assertThat(manageUsersPage.getCreateNewAccountButtonName(), equalTo(manageUsersPage.CREATE_NEW_ACCOUNT_BUTTON_NAME));
+
+        //9 Click "Create New Account"  button
         manageUsersPage.clickCreateNewAccountButton();
 
+        //10 Check fields on the "Create User" view
         List<String> expectedCreateUserView = new ArrayList<>();
         for(CreateUserViewNames item : CreateUserViewNames.values())
         {
@@ -67,6 +74,7 @@ public class AddUser extends MyBaseTest {
         }
         assertThat(actualCreateUserView, containsInAnyOrder(expectedCreateUserView.toArray(new String[expectedCreateUserView.size()])));
 
+        //11 Fill user information
         createNewAccountPage.setAccountInfo(properties.getProperty("testUser.username"),
                                             properties.getProperty("testUser.realname"),
                                             properties.getProperty("testUser.email"),
@@ -74,14 +82,19 @@ public class AddUser extends MyBaseTest {
                                             properties.getProperty("testUser.password"),
                                             properties.getProperty("testUser.access_level"));
 
+        //12 Click "Create User" button
         createNewAccountPage.clickCreateUserButton();
 
+        //13 logout
         createNewAccountPage.logout();
 
+        //14 login under created user
         loginPage.login(properties.getProperty("testUser.username"), properties.getProperty("testUser.password"));
 
+        //15 Asser User name in the right-top side of screen that user is loggined
         assertThat(homePage.getUserInfoLink().getText(), equalTo(properties.getProperty("testUser.username")));
 
+        //16 logout
         homePage.logout();
     }
 }
