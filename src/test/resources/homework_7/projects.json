@@ -1,0 +1,17 @@
+{
+  "id": 2933,
+  "name": "RTS-test-project26",
+  "status": {
+    "id": 10,
+    "name": "development",
+    "label": "development"
+  },
+  "description": "test project!",
+  "enabled": true,
+  "file_path": "/tmp/",
+  "view_state": {
+    "id": 10,
+    "name": "public",
+    "label": "public"
+  }
+}

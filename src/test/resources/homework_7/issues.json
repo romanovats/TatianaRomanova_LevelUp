@@ -1,0 +1,22 @@
+{
+  "summary": "Test issue with attachment",
+  "description": "lolkek!",
+  "project": {
+    "id": 312,
+    "name": "RTS-Issue-lolkek"
+  },
+  "category": {
+    "id": 5,
+    "name": "bugtracker"
+  },
+  "files": [
+    {
+      "name": "test.txt",
+      "content": "VGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4NClRoaXMgaXMgYSBURVNULg0KVGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4="
+    },
+    {
+      "name": "test2.txt",
+      "content": "VGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4NClRoaXMgaXMgYSBURVNULg0KVGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4="
+    }
+  ]
+}
