@@ -57,7 +57,7 @@ public class AddUser extends BaseTest {
         assertThat(actualCreateUserView, containsInAnyOrder(expectesCreateUserView.toArray(new String[expectesCreateUserView.size()])));
 
         //11 Fill user information
-        driver.findElement(By.id("user-username")).sendKeys("RTS-User");
+        driver.findElement(By.id("user-username")).sendKeys("RTS-User-test");
         driver.findElement(By.id("user-realname")).sendKeys("RTS-real-name");
         driver.findElement(By.id("email-field")).sendKeys("email@email.com");
         driver.findElement(By.id("user-password")).sendKeys("123");

@@ -2,7 +2,6 @@ package ru.levelup.tatiana.romanova.qa.homework_7;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +14,7 @@ public abstract class Data {
     public SubProject subProject;
     public Issue updatedIssue;
 
-    @BeforeTest(alwaysRun = true)
+    @BeforeClass(alwaysRun = true)
     protected void InitializeData() {
 
         ObjectMapper mapper = new ObjectMapper();

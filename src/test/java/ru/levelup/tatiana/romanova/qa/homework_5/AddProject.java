@@ -53,7 +53,7 @@ public class AddProject extends BaseTest {
         assertThat(actualAddProjectView, containsInAnyOrder(expectesAddProjectView.toArray(new String[expectesAddProjectView.size()])));
 
         //11 Fill project information
-        driver.findElement(By.id("project-name")).sendKeys("RTS-project1");
+        driver.findElement(By.id("project-name")).sendKeys("RTS-project-test1");
         driver.findElement(By.id("project-status")).sendKeys("development");
         if(driver.findElement(By.className("lbl")).isSelected()){
             driver.findElement(By.className("lbl")).click();
