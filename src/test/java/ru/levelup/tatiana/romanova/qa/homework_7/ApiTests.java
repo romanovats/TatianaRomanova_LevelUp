@@ -11,10 +11,6 @@ import static org.hamcrest.CoreMatchers.containsString;
 
 public class ApiTests extends Data {
 
-    String userId;
-    String projectId;
-    String issueId;
-
     //Создание пользователя
     @Test
     public void CreateUserTest(){
@@ -37,7 +33,7 @@ public class ApiTests extends Data {
                 .statusLine();
 
         String[] splitStatusLine = statusLine.split(" ");
-        userId = splitStatusLine[splitStatusLine.length - 1];
+        String userId = splitStatusLine[splitStatusLine.length - 1];
         System.out.println("created user id -> " + userId);
     }
 
@@ -63,7 +59,7 @@ public class ApiTests extends Data {
                 .statusLine();
 
         String[] splitStatusLine = statusLine.split(" ");
-        projectId = splitStatusLine[splitStatusLine.length - 1];
+        String projectId = splitStatusLine[splitStatusLine.length - 1];
         System.out.println("created project id -> " + projectId);
     }
 
@@ -88,7 +84,7 @@ public class ApiTests extends Data {
                 .statusLine();
 
         String[] splitStatusLine = statusLine.split(" ");
-        issueId = splitStatusLine[splitStatusLine.length - 1];
+        String issueId = splitStatusLine[splitStatusLine.length - 1];
         System.out.println("created issue id -> " + issueId);
     }
 
@@ -102,7 +98,7 @@ public class ApiTests extends Data {
 
         Response response = request
                 .when()
-                .delete("/users/"+userId);
+                .delete("/users/"+properties.getProperty("deletedUserId"));
 
         response
                 .then()
@@ -113,7 +109,6 @@ public class ApiTests extends Data {
     @Test
     public void CreateSubProjectTest(){
 
-        System.out.println(subProject);
         RequestSpecification request =
                 given()
                         .baseUri("http://khda91.fvds.ru/mantisbt/api/rest")
@@ -123,18 +118,14 @@ public class ApiTests extends Data {
 
         Response response = request
                 .when()
-                .post("/projects/"+projectId+"/subprojects");
-        System.out.println(response.statusLine());
+                .post("/projects/"+properties.getProperty("projectId")+"/subprojects");
+
         String statusLine =  response
                 .then()
                 .statusCode(204)
-                .statusLine(containsString("Subproject added to project"))
+                .statusLine(containsString("added to project"))
                 .extract()
                 .statusLine();
-
-        String[] splitStatusLine = statusLine.split(" ");
-        String id = splitStatusLine[1];
-        System.out.println("id -> " + id);
     }
 
     //обновление issue
@@ -149,7 +140,7 @@ public class ApiTests extends Data {
 
         Response response = request
                 .when()
-                .patch("/issues/"+issueId);
+                .patch("/issues/"+properties.getProperty("issueId"));
 
         String statusLine = response
                 .then()
@@ -174,7 +165,7 @@ public class ApiTests extends Data {
 
         Response response = request
                 .when()
-                .patch("/issues/"+9999);
+                .patch("/issues/"+properties.getProperty("nonexistentIssueId"));
 
         String statusLine = response
                 .then()
@@ -196,7 +187,7 @@ public class ApiTests extends Data {
 
         Response response = request
                 .when()
-                .delete("/projects/"+9999);
+                .delete("/projects/"+properties.getProperty("nonexistentProjectId"));
 
         String statusLine = response
                 .then()
@@ -217,7 +208,7 @@ public class ApiTests extends Data {
 
         Response response = request
                 .when()
-                .delete("/users/"+9999);
+                .delete("/users/"+properties.getProperty("nonexistentUserId"));
 
         String statusLine = response
                 .then()
