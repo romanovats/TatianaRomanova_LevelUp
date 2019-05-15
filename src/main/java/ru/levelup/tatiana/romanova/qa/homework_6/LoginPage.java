@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import ru.levelup.tatiana.romanova.qa.homework_6.base.BasePage;
 
 public class LoginPage extends BasePage {
-
+    // TODO Зачем здесь поле driver
     private WebDriver driver;
 
     @FindBy(id = "username")

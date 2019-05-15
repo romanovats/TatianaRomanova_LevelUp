@@ -20,8 +20,11 @@ public class SetFilterIssue extends MyBaseTest {
     private ViewIssuesPage viewIssuesPage;
 
     @Test
+    // TODO Наименование методов(
+    // TODO тест должен быть public
     private void SetFilterIssueTest() {
 
+        // TODO Лучше делать инициализацию страниц до теста
         homePage = new HomePage(driver);
         viewIssuesPage = new ViewIssuesPage(driver);
 

@@ -9,6 +9,7 @@ import java.util.List;
 
 public class ManagePage extends BasePage {
 
+    // TODO Зачем здесь поле driver
     private WebDriver driver;
 
     @FindBy(xpath = "//ul[contains(@class,'nav-tabs')]//a")

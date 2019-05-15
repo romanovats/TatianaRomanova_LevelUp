@@ -19,6 +19,7 @@ public abstract class BaseTest {
     @BeforeClass (alwaysRun = true)
     protected void setUpTest() {
         System.setProperty("webdriver.chrome.driver","libs/chromedriver.exe");
+        // TODO Драйвер лучше создавать в BeforeMethod || BeforeTest
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(7000, TimeUnit.MILLISECONDS);
         driver.manage().timeouts().pageLoadTimeout(30000, TimeUnit.MILLISECONDS);

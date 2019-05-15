@@ -5,6 +5,7 @@ import ru.levelup.tatiana.romanova.qa.homework_6.base.BasePage;
 
 public class HomePage extends BasePage {
 
+    // TODO Зачем здесь поле driver
     private WebDriver driver;
 
     public HomePage (WebDriver driver) {

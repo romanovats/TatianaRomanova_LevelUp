@@ -9,6 +9,7 @@ public class ManageUsersPage extends BasePage {
 
     public final String CREATE_NEW_ACCOUNT_BUTTON_NAME = "Create New Account";
 
+    // TODO Зачем здесь поле driver
     private WebDriver driver;
 
     @FindBy(xpath = "//div[@id='manage-user-div']//a[contains(@href,'manage_user_create')]")
