@@ -15,7 +15,7 @@ public class AddProject extends BaseTest {
     @Test
     // TODO Наименование методов(
     // TODO тест должен быть public
-    public void AddProjectTest(){
+    public void addProjectTest(){
         //3 Perform login
         //4 Assert User name ("administator") in the right-top side of screen that user is loggined
         login("administrator", "root");

@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.AfterTest;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,6 +17,10 @@ public abstract class BaseTest {
     @BeforeClass (alwaysRun = true)
     protected void setUpTest() {
         System.setProperty("webdriver.chrome.driver","libs/chromedriver.exe");
+    }
+
+    @BeforeMethod (alwaysRun = true)
+    protected void createDriver(){
         // TODO Драйвер лучше создавать в BeforeMethod || BeforeTest
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(7000, TimeUnit.MILLISECONDS);

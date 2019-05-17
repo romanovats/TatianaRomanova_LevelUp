@@ -19,7 +19,7 @@ public class AddUser extends BaseTest {
     @Test
     // TODO Наименование методов(
     // TODO тест должен быть public
-    private void AddUserTest(){
+    public void addUserTest(){
         //3 Perform login
         //4 Assert User name ("administator") in the right-top side of screen that user is loggined
         login("administrator", "root");
@@ -59,7 +59,7 @@ public class AddUser extends BaseTest {
         assertThat(actualCreateUserView, containsInAnyOrder(expectesCreateUserView.toArray(new String[expectesCreateUserView.size()])));
 
         //11 Fill user information
-        driver.findElement(By.id("user-username")).sendKeys("RTS-User-test");
+        driver.findElement(By.id("user-username")).sendKeys("RTS-User-test34");
         driver.findElement(By.id("user-realname")).sendKeys("RTS-real-name");
         driver.findElement(By.id("email-field")).sendKeys("email@email.com");
         driver.findElement(By.id("user-password")).sendKeys("123");
@@ -79,10 +79,10 @@ public class AddUser extends BaseTest {
         logout();
 
         //14 login under created user
-        login("RTS-User","123");
+        login("RTS-User-test34","123");
 
         //15 Asser User name in the right-top side of screen that user is loggined
-        assertThat(driver.findElement(By.className("user-info")).getText(), equalTo("RTS-User"));
+        assertThat(driver.findElement(By.className("user-info")).getText(), equalTo("RTS-User-test34"));
 
         //16 logout
         logout();
