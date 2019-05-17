@@ -26,8 +26,11 @@ public class AddUser extends MyBaseTest {
     private CreateNewAccountPage createNewAccountPage;
 
     @Test
+    // TODO Наименование методов(
+    // TODO тест должен быть public
     private void AddUserTest(){
 
+        // TODO Лучше делать инициализацию страниц до теста
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
         managePage = new ManagePage(driver);

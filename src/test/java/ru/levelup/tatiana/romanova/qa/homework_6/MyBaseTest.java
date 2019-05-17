@@ -28,6 +28,8 @@ public abstract class MyBaseTest {
 
         System.setProperty("webdriver.chrome.driver","libs/chromedriver.exe");
 
+        // TODO Драйвер лучше создавать в BeforeMethod || BeforeTest
+        // TODO Со страницами лучше поступать так же
         driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);

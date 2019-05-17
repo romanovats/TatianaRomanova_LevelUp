@@ -17,6 +17,8 @@ import static org.hamcrest.Matchers.equalTo;
 public class AddUser extends BaseTest {
 
     @Test
+    // TODO Наименование методов(
+    // TODO тест должен быть public
     private void AddUserTest(){
         //3 Perform login
         //4 Assert User name ("administator") in the right-top side of screen that user is loggined

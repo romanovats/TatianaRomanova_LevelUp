@@ -13,6 +13,7 @@ public class ApiTests extends Data {
 
     //Создание пользователя
     @Test
+    // TODO Наименование методов(
     public void CreateUserTest(){
         RequestSpecification request =
             given()
@@ -39,6 +40,7 @@ public class ApiTests extends Data {
 
     //Создание проекта
     @Test
+    // TODO Наименование методов(
     public void CreateProjectTest(){
         RequestSpecification request =
                 given()
@@ -65,6 +67,7 @@ public class ApiTests extends Data {
 
     //Создание issue с attachments
     @Test
+    // TODO Наименование методов(
     public void CreateIssueWithAttachmentsTest(){
         RequestSpecification request =
                 given()
@@ -90,6 +93,7 @@ public class ApiTests extends Data {
 
     //удаление созданного пользователя
     @Test
+    // TODO Наименование методов(
     public void DeleteUserTest(){
         RequestSpecification request =
                 given()
@@ -107,6 +111,7 @@ public class ApiTests extends Data {
 
     //добавление подпроекта к проекту
     @Test
+    // TODO Наименование методов(
     public void CreateSubProjectTest(){
 
         RequestSpecification request =
@@ -130,6 +135,7 @@ public class ApiTests extends Data {
 
     //обновление issue
     @Test
+    // TODO Наименование методов(
     public void UpdateIssueTest(){
         RequestSpecification request =
                 given()
@@ -155,6 +161,7 @@ public class ApiTests extends Data {
 
     //обновление несуществующего issue
     @Test
+    // TODO Наименование методов(
     public void UpdateNonexistentIssueTest(){
         RequestSpecification request =
                 given()
@@ -178,6 +185,7 @@ public class ApiTests extends Data {
 
     //удаление несуществующего проекта
     @Test
+    // TODO Наименование методов(
     public void DeleteNonexistentProjectTest(){
         RequestSpecification request =
                 given()
@@ -200,6 +208,7 @@ public class ApiTests extends Data {
 
     //Удаление несуществующего пользователя
     @Test
+    // TODO Наименование методов(
     public void DeleteNonexistentUserTest(){
         RequestSpecification request =
                 given()

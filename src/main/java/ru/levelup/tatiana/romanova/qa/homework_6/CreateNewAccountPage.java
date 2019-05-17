@@ -8,7 +8,7 @@ import ru.levelup.tatiana.romanova.qa.homework_6.base.BasePage;
 import java.util.List;
 
 public class CreateNewAccountPage extends BasePage {
-
+    // TODO Зачем здесь поле driver
     private WebDriver driver;
 
     @FindBy(xpath = "//td[@class='category']")
@@ -38,6 +38,7 @@ public class CreateNewAccountPage extends BasePage {
 
     public void clickCreateUserButton() { createUserButton.click(); }
 
+    // TODO Вместо такого количества параметров для метода, лучше использовать объект
     public void setAccountInfo(String userNameTextField, String userRealNameTextField, String emailTextField,
                                String passwordTextField, String verifyPasswordTextField, String accessLevelComboBox){
         this.userNameTextField.sendKeys(userNameTextField);

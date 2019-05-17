@@ -9,6 +9,7 @@ import java.util.List;
 
 public class ViewIssuesPage extends BasePage {
 
+    // TODO Зачем здесь поле driver
     private WebDriver driver;
 
     @FindBy(id="show_priority_filter")
@@ -62,6 +63,7 @@ public class ViewIssuesPage extends BasePage {
         }
     }
 
+    // TODO Вместо такого количества параметров для метода, лучше использовать объект
     public void setFilters(String priority, String severity, String status, String startYear, String startMonth,
                            String startDay, String endYear, String endMonth, String endDay){
 
